@@ -17,7 +17,6 @@ int main()
     while(str[i])
     {
         if (str[i] != '_')
-            //newstring[i] = str[i];
             write(1, &str[i], 1);
         i++;
     }

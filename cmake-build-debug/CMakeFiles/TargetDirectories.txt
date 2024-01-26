@@ -1,3 +1,0 @@
-/home/faboussa/exam/cmake-build-debug/CMakeFiles/exam.dir
-/home/faboussa/exam/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/faboussa/exam/cmake-build-debug/CMakeFiles/rebuild_cache.dir
