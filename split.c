@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   split.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: faboussa <faboussa@student.42lyon.fr>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/01/29 12:25:01 by faboussa          #+#    #+#             */
+/*   Updated: 2024/01/29 12:25:01 by faboussa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -10,7 +22,7 @@ char **ft_split(char *str)
 
     if (!(output=malloc(sizeof(char **) * 256)))
         return NULL;
-    while (str[i] && (str[i] > 7 && str[i] < 13 || str[i] == ' '))
+    while (str[i] && ((str[i] > 7 && str[i] < 13) || str[i] == ' '))
         i++;
     while (str[i])
     {
@@ -22,7 +34,7 @@ char **ft_split(char *str)
         while (str[i] && !(str[i] < 7 && str[i] > 13) && str[i] != ' ')
             output[k][j++] = str[i++];
 
-        while (str[i] && (str[i] > 7 && str[i] < 13 || str[i] == ' '))
+        while (str[i] && ((str[i] > 7 && str[i] < 13) || str[i] == ' '))
             i++;
 
         output[k][j] = '\0';

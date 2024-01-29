@@ -21,7 +21,7 @@ void sort_int_tab(int *tab, unsigned int size)
     unsigned int j;
     unsigned int temp;
     unsigned int i = 0;
-    while (i < size - 1)
+    while (i < size - 1) //-1 puisque i commence a 0
     {
         j=i+1;
         while(j < size)
