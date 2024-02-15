@@ -21,15 +21,11 @@ void expand(char *s)
     while (i < j)
     {
         if (!((s[i] >= 7 && s[i] <= 13) || s[i] == 32))
-        {
             write(1, &s[i], 1);
-        }
         else
         {
             while (((s[i] >= 7 && s[i] <= 13) || s[i] == 32))
-            {
                 i++;
-            }
             write(1, "   ", 3);
             i--;
         }
