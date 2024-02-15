@@ -1,25 +1,35 @@
 #include <unistd.h>
+#include <string.h>
 
 void rot13(char *s)
 {
-    int i = 0;
-
-    while (s[i])
-    {
-        if (s[i] >= 'a' && s[i] <= 'z')
-            s[i] = (s[i] - 'a' + 13) % 26 + 'a';
-        else if (s[i] >= 'A' && s[i] <= 'Z')
-            s[i] = (s[i] - 'A' + 13) % 26 + 'A';
-        i++;
-    }
-    write(1, s, i);
-    write(1, "\n", 1);
+	char *original = s;
+	while (*s)
+	{
+		if (*s >= 'a' && *s <= 'z')
+		{
+			*s = (*s - 'a' + 13) % 26 + 'a';
+			write(1, s, 1);
+		}
+		else if (*s >= 'A' && *s <= 'Z')
+			*s = (*s - 'A' + 13) % 26 + 'A';
+		s++;
+	}
+//	write(1, original, strlen(original));
+	write(1, "\n", 1);
 }
 
-int main(int ac, char **av)
+int main()
 {
-    if (ac == 2)
-        rot13(av[1]);
-    else
-        write(1, "\n", 1);
+	char av[3] = "abc";
+	rot13(av);
 }
+
+//int main(int ac, char **av)
+//{
+//	if (ac == 2)
+//		rot13(av[1]);
+//	else
+//		write(1, "\n", 1);
+//}
+
